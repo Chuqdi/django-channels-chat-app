@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block content %}
+
+{{ username| json_script:"username"}}
+{{ chat_room| json_script:"chat_room"}}
+
+<div class="row" style="margin-top:20px">
+    <div class="col-lg-4 offset-lg-4">
+        <p>{{ username }}</p>
+        <textarea id="messages" class="form-control" cols="4" style="height:230px;"></textarea>
+        <form id="form">
+            <input type="text" id="message" placeholder="Enter Message" class="form-control mt-2" />
+        </form>
+    <div>
+</div>
+
+{% endblock content%}
+
+{% block script %}
+
+<script src="{% static 'js/chat.js' %}">
+ 
+</script>
+
+{% endblock %}
